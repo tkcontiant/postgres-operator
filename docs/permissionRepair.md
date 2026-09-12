@@ -90,7 +90,9 @@ database. Run the operator with its default leader election enabled. Error statu
 never includes connection strings or passwords.
 
 Upgrade the installed CRD as well as the controller before configuring the new
-fields. Helm does not automatically upgrade CRDs from a chart's `crds/` directory.
+fields. Chart version `3.2.0` and later upgrades CRDs through its bundled subchart.
+Existing Helm installations require [one-time CRD adoption](../charts/ext-postgres-operator/README.md#existing-helm-installations-one-time-adoption)
+before the first upgrade from the old `crds/` layout.
 
 To run the real privilege/rollback tests against a **disposable** PostgreSQL server:
 
